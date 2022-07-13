@@ -36,12 +36,12 @@ contract WETH9 {
         balanceOf[msg.sender] += msg.value;
         emit Deposit(msg.sender, msg.value);
     }
-    // function withdraw(uint wad) public {
-    //     require(balanceOf[msg.sender] >= wad, "");
-    //     balanceOf[msg.sender] -= wad;
-    //     msg.sender.transfer(wad);
-    //     emit Withdrawal(msg.sender, wad);
-    // }
+    function withdraw(uint wad) public {
+        require(balanceOf[msg.sender] >= wad, "");
+        balanceOf[msg.sender] -= wad;
+        msg.sender.transfer(wad);
+        emit Withdrawal(msg.sender, wad);
+    }
 
     function totalSupply() public view returns (uint) {
         return address(this).balance;

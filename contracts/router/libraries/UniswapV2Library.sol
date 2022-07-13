@@ -42,7 +42,6 @@ library UniswapV2Library {
                 )
             )
         );
-        console.log("pair for", pair);
     }
 
     // fetches and sorts the reserves for a pair
